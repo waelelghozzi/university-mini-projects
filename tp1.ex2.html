@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>  
+
+ 
+        <h1>Tableau</h1>
+        <h2>tableau de depart</h2>
+        
+<table border="1" >
+    <td>
+        
+    </td>
+    <tr class="d1">
+
+    </tr>
+    <tr class="d12">
+
+    </tr>
+</table>
+
+
+<h2 class="sup"></h2>
+<h2 class="moy"></h2>
+<input type="button" value="trier" onclick="sor()">
+    <h2>tableau triee :</h2>
+
+    <table border="1" >
+        <tr class="d2">
+    
+        </tr>
+    </table>
+
+  <input type="button" value="indice de valeur rechercher" onclick="re()">
+    <h2 class="indice"></h2>
+
+    <input type="button" value="max valeur" onclick="maxx()">
+    
+        <h1 class="max"></h1>
+        
+
+</body>    
+<script  language="javascript" >
+
+
+
+function maxx()
+{
+   let m = t[0];
+   for( let i=1 ;i<t.length;i++)
+{
+    if (t[i]>m){
+           m=t[i];
+    }
+ 
+}
+document.querySelector('.max').innerHTML= "la valeur max est : " + m;
+}
+
+
+
+
+
+function re(){
+  
+   let test=0;
+   
+   let note = parseInt(prompt('saisie note a recherecher'));
+
+for(let i=0;i<t.length;i++){
+    if(t[i]==note){
+        let p=t.indexOf(note);
+        p++;
+ document.querySelector('.indice').innerHTML="le indice de valeur rechercher est :" + p;
+
+ break;
+    }
+    if(i-1==t.length){
+test=1;
+    }
+
+}
+if(test==1){
+     document.querySelector('.rech').innerHTML=tab="note introuvable";
+}
+}
+
+
+
+
+
+
+
+
+    let x=prompt('saisire le taille du tab');
+var t=new Array(x);
+for (let i = 0; i < 1; i++)
+{
+ t[i] = new Array(x);
+}
+
+let tab="";
+let tabn="";
+let k;
+
+let sup=0;
+let s=0;
+let name;
+
+for(let i=0;i<x;i++){
+    
+tab=tab+"<td>";
+        tabn=tabn+"<td>";
+            name = (prompt('saisire une nom'));
+   do{
+   k = parseInt(prompt('saisire une case'));
+   }while(k<0);
+if(k>10){
+    sup++;
+}
+s=s+k;
+
+t[i][0]=name;
+t[i][1]=k;
+
+
+tab = tab + k + "</td>";
+tabn = tabn + name + "</td>";
+console.log(t[i]);
+    
+    
+
+
+
+console.log(tab);
+document.querySelector('.d1').innerHTML=tab;
+document.querySelector('.d12').innerHTML=tabn;
+document.querySelector('.sup').innerHTML= "le nombre des notes superieur a 10 : " + sup;
+document.querySelector('.moy').innerHTML= "le moyenne des notes : "+ s/x;
+}
+
+function sor(){
+    var h;
+    let x;
+do{
+h=0;
+for(let j =  0; j < t.length-1; j++){
+    
+        if(t[j] > t[j+1]){
+         x = t[j];
+            t[j] = t[j+1];
+            t[j+1] = x;
+            h=1;
+        }
+    }
+}while(h==1);
+
+ let tab2="";
+t.forEach((v)=>{
+    tab2=tab2+"<td>";
+    tab2 = tab2 + v + "</td>";
+});
+document.querySelector('.d2').innerHTML=tab;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
