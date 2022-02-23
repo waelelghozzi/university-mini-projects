@@ -1,0 +1,318 @@
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        th {
+            border: 1px solid black;
+            width: 300px;
+        }
+    </style>
+    <h1>tableau structures</h1>
+    <h4>tableau de depart:</h4>
+    <br>
+<input type="button" onclick="add()" value="add eleve" >
+<input type="button" onclick="affiche_eleve()" value="recherche eleve" >
+
+
+
+    <table id="tab" class="tab">
+        <tr>
+            <th>prenome</th>
+            <th>notes</th>
+            <th>photos</th>
+        </tr>
+
+    </table>
+
+ <p> le eleve </p>
+<table id="rech">
+   
+   
+</table>
+
+    <p id="sup"></p>
+    <p id="moy"></p>
+    <p id="max"></p>
+    <p id="pos"></p>
+
+
+    <h4>tableau trie par nom:</h4>
+    <br>
+
+    <table id="tab_trie_name">
+        <tr>
+            <th>prenome</th>
+            <th>notes</th>
+            <th>photos</th>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+
+
+    <input type="button" onclick="affiche_eleve_tri()" value="recherche eleve apres tri" >
+    <h4>tableau trie par note:</h4>
+    <br>
+    <table id="tab_trie_note">
+        <tr>
+            <th>prenome</th>
+            <th>notes</th>
+            <th>photos</th>
+        </tr>
+    </table>
+
+</body>
+
+<script>
+    let classe = [];
+let eleve={
+
+    
+    init : function (nom,n){
+
+        console.log(nom);
+        this.nom=nom;
+        this.n=n;
+    }
+    
+};
+   /* var t = [8, 12, 9];
+var n = ["tata", "tete", "titi"];
+var src = ["images.jpg","pp.jpg","profil.jpg"];
+window.eleve = new Array; */
+
+// create array des eleves
+
+
+    
+  
+
+
+//affichage de array eleve 
+
+
+
+classe.forEach(function(element) {
+
+    document.getElementById("tab").innerHTML += 
+    "<tr>" + 
+      
+    "<th>" + 
+        element.name +
+         "</th>" + 
+
+         "<th>" + 
+         element.n + 
+         "</th>" +
+
+          "<th>" +
+     '<img height="150px" width="150px" src=" ' + element.photo + '" >' +
+      "</th>"+
+
+    "</tr>";
+    console.log(element);
+});
+
+
+
+define();
+function define(){
+
+
+//note sup a 3achra 
+sup();
+function sup(){
+    s = classe.filter( n => n > 10);
+document.getElementById("sup").innerHTML ='nombre de note superieures a 10: '+ s.length;
+}
+//calc moyenne
+moy();
+function moy(){
+    let sum = 0;
+    classe.forEach(function(element) {
+    sum += element.n;
+});
+document.getElementById("moy").innerHTML ='moyenne des notes: '+ (sum / classe.length);
+}
+// find the max 
+max();
+function max(){
+let max = 0;
+classe.forEach(function(element) {
+    if (element.n > max) { max = element.n}
+});
+document.getElementById("max").innerHTML ='Max: '+ max;
+}
+// find pos
+find();
+function find(){
+let r = classe.find(({ n }) => n === 9);
+document.getElementById("pos").innerHTML ='9 est present dans le tableau en position  '+ (classe.indexOf(r) + 1);
+}
+
+
+
+}
+
+
+
+
+
+
+
+inis();
+function inis(){
+
+
+
+//trie tab by name
+let tb = classe.sort(function(a, b) {
+    var nameA = a.name.toUpperCase();
+    var nameB = b.name.toUpperCase();
+    if (nameA < nameB) {
+        return -1;
+    }
+    if (nameA > nameB) {
+        return 1;
+    }
+    return 0;
+});
+var k="";
+tb.forEach(function(element) {
+   k += 
+    "<tr>" + 
+      
+    "<th>" + 
+    element.name +
+         "</th>" + 
+
+         "<th>" + 
+         element.n + 
+         "</th>" +
+
+          "<th>" +
+     '<img height="150px" width="150px" src=" ' + element.photo + '" >' +
+      "</th>"+
+
+    "</tr>";
+});
+document.getElementById("tab_trie_name").innerHTML=k;
+
+//trie tab by note 
+let tr = classe.sort((a, b) => a.n - b.n);
+k="";
+tr.forEach(function(element) {
+k +=  "<tr>" + 
+      
+    "<th>" + 
+    element.name +
+         "</th>" + 
+
+         "<th>" + 
+         element.n + 
+         "</th>" +
+
+          "<th>" +
+     '<img height="150px" width="150px" src=" ' + element.photo + '" >' +
+      "</th>"+
+
+    "</tr>";
+});
+document.getElementById("tab_trie_note").innerHTML=k;
+return(tr);
+}
+function affiche_eleve_tri(){
+    tr= inis();
+    var nom =prompt('saisire un nom');
+    var t_n = tr.filter(element=> element.name==nom) ;
+    console.log(t_n);
+
+
+    
+    if(t_n.length===0){
+        alert('eleve ne exciste pas');
+        document.getElementById("rech").innerHTML = "";
+    }
+    else{
+        document.getElementById("rech").innerHTML = 
+        
+          "<tr> <th>prenome</th> <th>notes</th> <th>photos</th> </tr> " +
+
+        "<tr>" + 
+      
+        "<th>" + 
+            t_n[0].name +
+             "</th>" + 
+    
+             "<th>" + 
+             t_n[0].n + 
+             "</th>" +
+    
+              "<th>" +
+         '<img height="150px" width="150px" src=" ' + t_n[0].photo + '" >' +
+          "</th>"+
+    
+        "</tr>";
+    }
+}
+
+function add(){
+    
+     n2 = prompt('saisire nom');
+     no = parseInt(prompt('saisire note'));
+    eleve= Object.create(eleve);
+    console.log(n2);
+eleve.init(n2,no);
+classe.push(eleve);
+    
+    document.getElementById("tab").innerHTML += 
+    "<tr>" + 
+      
+    "<th>" + 
+        classe[classe.length-1].name +
+         "</th>" + 
+
+         "<th>" + 
+      classe[classe.length-1].n + 
+         "</th>" +
+
+          "<th>" +
+     '<img height="150px" width="150px" src=" ' + classe[classe.length-1].photo + '" >' +
+      "</th>"+
+
+    "</tr>";
+
+  
+  inis();
+  define();
+;}
+//affivhe eleve ou total tab
+function affiche_eleve(){
+    alert('affichage totale ou une selle case ? 0 si total 1 si non');
+    var ch =parseInt(prompt('saisie le choix'));
+
+    if(ch==1){
+ 
+           var name =prompt('saisie le nom');
+    }
+   let i=0;
+    classe.forEach((element)=>{
+        if((ch==1)&&(element==name)){
+            console.log(document.querySelectorAll('.tab')[i].innerHTML);
+        }
+        else if(ch==0){
+            console.log(document.querySelectorAll('.tab')[i].innerHTML);
+        }
+        i++;
+    });}
+</script>
+</html>
