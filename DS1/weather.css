@@ -1,0 +1,354 @@
+@font-face {
+    font-family: made ;
+    src: url(Lexend-VariableFont_wght.ttf);
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-image: url(tom-barrett-hgGplX3PFBg-dunsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.main-p{
+
+    width: 40%;
+    height: 100vh;
+    right: 0;  
+    backdrop-filter: blur(5px);
+    position: absolute;
+    background: linear-gradient( to right bottom,
+         rgba(63, 63, 63, 0.308),
+         rgba(63, 63, 63, 0.308)
+      );
+ 
+      display: flex;
+      flex-direction: column;
+      
+}
+.ser{
+    background-color:rgba(255, 0, 0, 0);
+    height: 25px;
+    width: 50%;
+    border: none;
+    color: rgba(230, 230, 230, 0.52);
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    padding-right: 20%;
+    margin-top: 10%;
+    margin-left:10% ;
+    font-family: made;
+    border-bottom:  2px  solid  rgba(230, 230, 230, 0.52);
+    user-select: none;
+    outline: none;
+
+}
+.near{
+    font-family: made;   
+    color: rgba(230, 230, 230, 0.52);   
+    font-size: 1.5em;   
+    margin-top: 8%;
+    margin-bottom: 3%;
+    margin-left:10% ;
+}
+.close-c{
+    font-family: made;   
+    color: rgba(230, 230, 230, 0.52);   
+    font-size: 1.5em;   
+margin-top: 1%;
+    margin-left:10% ;
+    border-radius: 5px;
+    transition: all 400ms;
+    width:65%;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.close-c:hover{
+    background-color:rgba(97, 97, 97, 0.212);
+    color: rgba(221, 221, 221, 0.856);
+}
+.line{
+    background-color: rgba(230, 230, 230, 0.52);   
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+width: 80%;
+height: 2px;
+}
+.details{
+    font-family: made;   
+    color: rgba(230, 230, 230, 0.52);   
+    font-size: 1.5em; 
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+
+}
+.head{
+    height: 50px;
+    width: 100%;
+    margin-bottom: 10px;
+    
+}
+.cont{
+    display: flex;
+    flex-direction: column;
+    
+}
+.cont>*{
+    display: flex;
+    padding-top: auto;
+    padding-bottom: auto;
+    flex-direction: row;
+    height: 60px;
+    font-size: 0.8em;
+    width: 100%;
+}
+
+.value1{
+    position: absolute;
+right: 10%;
+}
+.value2{
+    position: absolute;
+right: 10%;
+}
+.value3{
+    position: absolute;
+right: 10%;
+}
+.value4{
+    position: absolute;
+right: 10%;
+}
+.value5{
+    position: absolute;
+right: 10%;
+}
+.value6{
+    position: absolute;
+right: 9%;
+}
+.big{
+    font-family: made;   
+    color: rgba(230, 230, 230, 0.52); 
+    position: absolute;
+    left: 10%;
+    bottom: 15%;
+    display: flex;
+    flex-direction: row;
+}
+ .num{
+    font-size: 9em;
+}
+.date{
+    margin-top: 10%;
+display: flex;
+flex-direction: column;
+margin-left: 1%;
+
+}
+.s1{
+    font-size:2.5em;
+}
+.s2{
+    font-size: 1em;
+}
+
+
+.tn{ 
+    opacity: 0.5;
+    position: absolute;
+    width: auto;
+    height: 90vh;
+  margin-top: 3%;
+    left: 16%;
+    transition: all 400ms;
+}
+.sec1{
+opacity:0;
+}
+.sec2{
+opacity:1;
+}
+path:hover{
+    opacity: 0.7;
+    fill:rgba(24, 24, 24, 0.89);
+    transition: all 400ms;
+}
+.cli_c{
+    position: absolute;
+    width: 15%;
+    height: auto;
+    left: 10%;
+    bottom: 10%;
+    font-family: made;
+    font-size: 2em;
+    color: rgba(230, 230, 230, 0.52); 
+    transition: all 400ms;
+}
+.cli_c2{
+    position: absolute;
+    width: 15%;
+    height: auto;
+    left: 10%;
+    bottom: 3%;
+    font-family: made;
+    font-size: 1em;
+    color: rgba(230, 230, 230, 0.267); 
+    transition: all 400ms;
+}
+.svg{
+  
+    opacity: 0.8;
+    width: 35px;
+    height: 35px;
+}
+.info{
+    top: 5%;
+    left: 5%;
+    height: 25px;
+    width: 25px;
+    z-index: 99;
+    position: absolute;
+}
+.dash{
+  user-select: none;
+ position: absolute;
+ margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2em;
+    font-family: made;   
+    color: rgba(230, 230, 230, 0.52); 
+}
+.d1 ,.d2{
+cursor: pointer;
+    width: auto;
+    height: auto;
+}
+.d1:hover ,.d2:hover{
+    color: rgba(151, 151, 151, 0.52); 
+    width: auto;
+    height: auto;
+}
+.d2{
+    position: absolute;
+    right: 20%;
+}
+.d1{
+    margin-left: 10%;
+}
+.details-week{
+    margin-right: auto;
+    margin-left: auto;
+display:none ;
+ flex-direction: column;
+ height: 500px;
+    
+}
+.rest{
+    margin-top: 40%;
+    display: flex;
+    flex-direction: row;
+  
+}
+
+
+
+
+.rest>*{
+    margin: auto;
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius:10px ;
+    font-family: made;   
+    color: rgba(230, 230, 230, 0.52); 
+    font-size: 0.8em;
+    border:1px  rgba(139, 139, 139, 0.52) solid ;
+}
+.head2{
+    font-family: made;   
+    color: rgba(230, 230, 230, 0.52);   
+    font-size: 1.5em; 
+    margin-top: 5%;
+    margin-left: 4%;
+}
+.today{
+    display: flex;
+    flex-direction: row;
+}
+.tdinfo{
+    margin-left: 27%;
+    margin-top: 9%;
+    font-family: made;   
+    color: rgba(230, 230, 230, 0.52);   
+ position: absolute;
+    font-size: 1.3em; 
+}
+ .img{
+     position: absolute;
+     margin-left: 8%;
+     margin-top: 6%;
+    height: 100px;
+    width: 100px;
+    opacity: 0.5;
+}
+.rest span{
+ margin: auto;
+}
+.title{
+width:27%;
+justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+.title img{
+height: 30px;
+width: 30px;
+opacity: 0.8;
+}
+.rest img{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+opacity: 0.5;
+width: 25px;
+height: 25px;
+}
+
+.co{ 
+    display: flex;
+    flex-direction: row;
+position: absolute;
+margin-top: 39%;
+
+}
+
+.co>*{
+   border-radius: 10px;
+    width: 90px;
+    height: 20px;
+    margin: 11px;
+    display: flex;
+    font-family: made;   
+    color: rgba(230, 230, 230, 0.52); 
+    font-size: 0.8em;
+   
+}
+.co div span{
+    margin-right: auto;
+    margin-left: auto;
+}
